@@ -1,4 +1,4 @@
-function carFactory(requsted) {
+function vehicleFactory(requsted) {
   const engines = {
     90: {
       power: 90,
