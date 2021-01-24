@@ -6,6 +6,7 @@ function timeToWlalk(steps, stepLength, khPerHour) {
   let hours = Math.floor(minutes / 60);
   minutes += breakMinutes;
   seconds = seconds % 60;
+  
   function addZero(x) {
     const toArr = Array.from(x.toString());
     const result = "0".concat(toArr.shift());
