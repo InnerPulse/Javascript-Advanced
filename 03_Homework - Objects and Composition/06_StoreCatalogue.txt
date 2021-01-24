@@ -1,7 +1,5 @@
 function storage(params) {
   const catalogue = {};
-
-  // Creating categories by initials of products, sorted alphabetically.
   Array.from(
     params.reduce((a, c) => {
       a.add(getInitials(c));
@@ -11,14 +9,12 @@ function storage(params) {
     .sort()
     .forEach((categorie) => (catalogue[categorie] = {}));
 
-  // Creating product objects.
   params.forEach((line) => {
     const [product, price] = line.split(" : ");
     const initials = getInitials(product);
     catalogue[initials][product] = Number(price);
   });
 
-  // Sort and print.
   for (const categorie in catalogue) {
     console.log(
       `${categorie}\n  ${sortProducts(Object.entries(catalogue[categorie]))}`
