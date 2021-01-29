@@ -53,7 +53,7 @@ function solve() {
         });
     }
     function buy() {
-        const cart = { products: [], totalBill: 0, decFactor: [] };
+        const cart = { products: [], totalBill: 0, decFactor: [0] };
         const checkboxes = [...document.querySelectorAll("#exercise input")];
 
         checkboxes.forEach((box) => {
