@@ -14,6 +14,7 @@ function solve() {
             return a + c;
           }, "");
       // break; - No need of break operator as we return the value.
+
       case "Pascal Case":
         return content
           .map((el) => el.toLowerCase())
@@ -21,6 +22,7 @@ function solve() {
             return a + (c[0].toUpperCase() + c.slice(1));
           }, "");
       // break; - No need of break operator as we return the value.
+
       default:
         return "Error!";
       // break; - No need of break operator as we return the value and also beacause it's last case.
