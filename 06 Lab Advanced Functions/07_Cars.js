@@ -1,5 +1,5 @@
 function cars(data) {
-     // Note: Need to be done by using closure!
+     // Note: Need to be done using closure!
     
     const vehicleBuilder = () => {
         const vehicles = {};
