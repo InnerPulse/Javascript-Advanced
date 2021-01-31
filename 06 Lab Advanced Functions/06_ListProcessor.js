@@ -1,5 +1,5 @@
 function listProcessor(input) {
-    // Need to be done by using closure!
+    // Note: Need to be done using closure!
 
     const listCreator = () => {
         let list = [];
