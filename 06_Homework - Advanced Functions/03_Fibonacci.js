@@ -1,4 +1,4 @@
-function getFibonator() {
+function fibonacci() {
     // Note: Use a closure to keep the current state!
     let [a, b] = [0, 1];
 
@@ -10,7 +10,7 @@ function getFibonator() {
     };
 }
 
-// const fib = getFibonator();
+// const fib = fibonacci();
 // console.log(fib()); // 1
 // console.log(fib()); // 1
 // console.log(fib()); // 2
