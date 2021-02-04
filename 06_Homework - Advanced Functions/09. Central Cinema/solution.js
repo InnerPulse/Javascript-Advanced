@@ -1,7 +1,7 @@
 function solve() {
     const movieList = document.querySelector("#movies > ul");
     const archiveList = document.querySelector("#archive > ul");
-    const clearButton = document.querySelector("#archive > ul");
+    const clearButton = document.querySelector("#archive > button");
     const onScreenButton = document.querySelector("#container > button");
 
     clearButton.addEventListener("click", () => (archiveList.innerHTML = ""));
