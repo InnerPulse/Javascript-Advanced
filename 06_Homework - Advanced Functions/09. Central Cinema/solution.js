@@ -4,7 +4,6 @@ function solve() {
     const clearButton = document.querySelector("#archive > ul");
     const onScreenButton = document.querySelector("#container > button");
 
-    // clearButton.addEventListener("click", () => (archiveList.innerHTML = ""));
     clearButton.addEventListener("click", () => (archiveList.innerHTML = ""));
     onScreenButton.addEventListener("click", addMovie);
 
@@ -36,7 +35,6 @@ function solve() {
             buttonElement.addEventListener("click", archiveMovie);
 
             // append all elements
-
             [strongElement2, inputElement, buttonElement].forEach((el) => divElement.appendChild(el));
             [spanElement, strongElement1, divElement].forEach((el) => liElement.appendChild(el));
 
