@@ -15,19 +15,24 @@ describe('isOddOrEven function', () => {
   it('returns undefind if type if not valid', () => {
     expect(isOddOrEven(1)).to.undefined;
   });
+
   it('returns undefind if type if not valid', () => {
     expect(isOddOrEven(['1'])).to.undefined;
   });
+
   it('odd with valid sting', () => {
     expect(isOddOrEven('a')).to.equal('odd');
   });
+
   it('even with valid sting', () => {
     expect(isOddOrEven('aa')).to.equal('even');
   });
+
   // test overloading
   it('odd with valid longер sting', () => {
     expect(isOddOrEven('aaааа')).to.equal('odd');
   });
+  
   it('even with valid longер sting', () => {
     expect(isOddOrEven('aaаааа')).to.equal('even');
   });
