@@ -16,6 +16,7 @@ describe('Sum function', () => {
   it('sums mutiple number', () => {
     expect(sum([1, 1])).to.equal(2);
   });
+  
   it('sums string numbers', () => {
     expect(sum(['1', '1'])).to.equal(2);
   });

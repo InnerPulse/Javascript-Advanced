@@ -14,36 +14,47 @@ describe('RGBtoHEX function', () => {
   it('convert black to hex', () => {
     expect(rgbToHexColor(0, 0, 0)).to.equal('#000000');
   });
+
   it('convert white to hex', () => {
     expect(rgbToHexColor(255, 255, 255)).to.equal('#FFFFFF');
   });
+
   it('return undefined for out of range negative numeric', () => {
     expect(rgbToHexColor(-1, 0, 0)).to.undefined;
   });
+
   it('return undefined for out of range negative numeric', () => {
     expect(rgbToHexColor(0, -1, 0)).to.undefined;
   });
+
   it('return undefined for out of range negative numeric', () => {
     expect(rgbToHexColor(0, 0, -1)).to.undefined;
   });
+
   it('return undefined for out of range positive numeric', () => {
     expect(rgbToHexColor(256, 0, 0)).to.undefined;
   });
+
   it('return undefined for out of range positive numeric', () => {
     expect(rgbToHexColor(0, 256, 0)).to.undefined;
   });
+
   it('return undefined for out of range positive numeric', () => {
     expect(rgbToHexColor(0, 0, 256)).to.undefined;
   });
+
   it('return undefined for invalid type arguments', () => {
     expect(rgbToHexColor('0', 0, 0)).to.undefined;
   });
+
   it('return undefined for invalid type arguments', () => {
     expect(rgbToHexColor(0, [], 0)).to.undefined;
   });
+
   it('return undefined for invalid type arguments', () => {
     expect(rgbToHexColor(0, 0, {})).to.undefined;
   });
+
   // test overloading
   it('return #73A7EF', () => {
     expect(rgbToHexColor(115, 167, 239)).to.equal('#73A7EF');
