@@ -1,10 +1,10 @@
 function tickets(ticketsInfo, sortingCriteria) {
   class Ticket {
     constructor(destination, price, status, id) {
-      (this.destination = destination),
-        (this.price = price),
-        (this.status = status),
-        (this.id = id);
+      this.destination = destination;
+      this.price = price;
+      this.status = status;
+      this.id = id;
     }
   }
 
