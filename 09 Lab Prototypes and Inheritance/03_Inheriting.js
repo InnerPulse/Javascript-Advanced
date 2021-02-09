@@ -1,30 +1,23 @@
 function extend() {
   class Person {
     constructor(name, email) {
-      this.name = name;
-      this.email = email;
+      (this.name = name), (this.email = email);
     }
 
     toString() {
-      return `${this.constructor.name} (name: ${this.name}, email: ${
-        this.email
-      }, ${Object.keys(this).length === 2 ? '' : Object.keys(this)[2]}: ${
-        Object.values(this)[2]
-      })`;
+        return this.constructor.name + ' (' + Object.keys(this).map(k => `${k}: ${this[k]}`).join(', ') + ')';           
     }
   }
 
   class Teacher extends Person {
     constructor(name, email, subject) {
-      super(name, email);
-      this.subject = subject;
+      super(name, email), (this.subject = subject);
     }
   }
 
   class Student extends Person {
     constructor(name, email, course) {
-      super(name, email);
-      this.course = course;
+      super(name, email), (this.course = course);
     }
   }
 
