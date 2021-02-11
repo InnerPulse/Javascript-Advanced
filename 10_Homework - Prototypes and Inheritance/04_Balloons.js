@@ -9,7 +9,7 @@ function balloons() {
   class PartyBalloon extends Balloon {
     constructor(color, gasWeight, ribbonColor, ribbonLength) {
       super(color, gasWeight);
-      this.ribbon = { color: ribbonColor, length: ribbonLength };
+      this._ribbon = { color: ribbonColor, length: ribbonLength };
     }
 
     set ribbon(value) {
@@ -24,13 +24,9 @@ function balloons() {
   class BirthdayBalloon extends PartyBalloon {
     constructor(color, gasWeight, ribbonColor, ribbonLength, text) {
       super(color, gasWeight, ribbonColor, ribbonLength);
-      this.text = text;
+      this._text = text;
     }
 
-    set text(value) {
-      this._text = value;
-    }
-    
     get text() {
       return this._text;
     }
