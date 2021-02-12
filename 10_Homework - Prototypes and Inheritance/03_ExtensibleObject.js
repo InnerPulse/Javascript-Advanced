@@ -1,15 +1,15 @@
 function extendedObject() {
-  const inst = {};
+  const __proto__ = {};
 
-  inst.extend = function (templates) {
+  __proto__.extend = function (templates) {
     Object.entries(templates).forEach(([key, value]) => {
       if (typeof value === 'function') {
-        Object.getPrototypeOf(inst)[key] = value;
+        Object.getPrototypeOf(__proto__)[key] = value;
       } else {
-        inst[key] = value;
+        __proto__[key] = value;
       }
     });
   };
 
-  return inst;
+  return __proto__;
 }
