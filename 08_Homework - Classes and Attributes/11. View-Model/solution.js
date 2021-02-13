@@ -1,15 +1,12 @@
 class Textbox {
-  constructor(selector, invalidSymbols) {
+  _value;
+  constructor(selector, regex) {
+    this.selector = selector;
+    this._invalidSymbols = regex;
     this._elements = Array.from(document.querySelectorAll(selector));
-    for (let i = 0; i < this._elements.length; i++) {
-      $(selector)
-        .eq(i)
-        .on('input', () => {
-          let val = $(selector).eq(i).val();
-          this.value = val;
-        });
-    }
-    this._invalidSymbols = invalidSymbols;
+    this._elements.forEach(
+      (el) => (el.oninput = () => (this.value = el.value))
+    );
   }
 
   get elements() {
@@ -20,11 +17,9 @@ class Textbox {
     return this._value;
   }
 
-  set value(val) {
-    this._value = val;
-    this.elements.map((el) => {
-      el.value = val;
-    });
+  set value(value) {
+    this._elements.forEach((el) => (el.value = value));
+    this._value = value;
   }
 
   isValid() {

@@ -49,7 +49,7 @@ function computerHierarchy() {
 
     set battery(v) {
       if (!(v instanceof Battery)) {
-        throw new TypeError('Arguments must be of type battery.');
+        throw new TypeError('Arguments must be of type Battery.');
       }
       this._battery = v;
     }
@@ -69,7 +69,7 @@ function computerHierarchy() {
 
     set keyboard(v) {
       if (!(v instanceof Keyboard)) {
-        throw new TypeError('Arguments must be of type keyboard.');
+        throw new TypeError('Arguments must be of type Keyboard.');
       }
       this._keyboard = v;
     }
@@ -80,7 +80,7 @@ function computerHierarchy() {
 
     set monitor(v) {
       if (!(v instanceof Monitor)) {
-        throw new TypeError('Arguments must be of type monitor.');
+        throw new TypeError('Arguments must be of type Monitor.');
       }
       this._monitor = v;
     }
