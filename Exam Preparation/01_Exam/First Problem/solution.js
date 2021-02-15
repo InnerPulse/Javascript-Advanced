@@ -22,7 +22,7 @@ function solve() {
         : true;
 
     if (!allAreValid) {
-      alert('Invalid Details!');
+      alert('Details missing!');
       return;
     }
 
