@@ -1,7 +1,8 @@
 function extend() {
   class Person {
     constructor(name, email) {
-      (this.name = name), (this.email = email);
+      this.name = name;
+      this.email = email;
     }
 
     toString() {
@@ -70,5 +71,3 @@ function toStringExtension(){
         Teacher
       }
 }
-=======
->>>>>>> 7e4c4bce632ca306fb9d57abcb0d0a8c6918158b
