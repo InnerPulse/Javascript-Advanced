@@ -8,7 +8,7 @@ function solve() {
     input.value = '';
 
     if (giftName == false) {
-      alert('Details missing');
+      alert('Details missing!');
       return;
     }
 
