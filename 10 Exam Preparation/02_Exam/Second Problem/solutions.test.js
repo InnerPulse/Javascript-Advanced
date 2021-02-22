@@ -68,7 +68,7 @@ describe('Repository', function () {
   it('add', () => {
     // testing the method 'add' with invalid entity
     const repo = new Repository(properties);
-    // Because we relies on this context:
+    // Because we relies on 'this' context:
     // which is lost when the function is invoked by .throw
     // there’s no way for it to know what this is supposed to be
     // so we have these options:
