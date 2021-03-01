@@ -7,23 +7,23 @@ function monkeyPatcher(arg) {
             this.downvotes++;
         },
         score: () => {
-            let rating = "new";
+            let rating = 'new';
             let currentUpVotes = this.upvotes;
             let currentDownVotes = this.downvotes;
             const balance = this.upvotes - this.downvotes;
             const totalVotes = this.upvotes + this.downvotes;
-            const upvotesProcentage = (this.upvotes / (this.upvotes + this.downvotes)) * 100;
+            const upvotesPercentage = (this.upvotes / (this.upvotes + this.downvotes)) * 100;
 
-            if (upvotesProcentage > 66) {
-                rating = "hot";
+            if (upvotesPercentage > 66) {
+                rating = 'hot';
             } else if (balance >= 0 && (currentUpVotes > 100 || currentDownVotes > 100)) {
-                rating = "controversial";
+                rating = 'controversial';
             }
             if (balance < 0) {
-                rating = "unpopular";
+                rating = 'unpopular';
             }
             if (totalVotes < 10) {
-                rating = "new";
+                rating = 'new';
             }
 
             if (totalVotes > 50) {

@@ -8,16 +8,16 @@ const { expect } = require('chai');
 // 1 Return the sum of the values of all elements inside the array.
 
 describe('Sum function', () => {
-  it('sums single number', () => {
-    expect(sum([1])).to.equal(1);
-  });
+    it('sums single number', () => {
+        expect(sum([1])).to.equal(1);
+    });
 
-  // test overloading
-  it('sums mutiple number', () => {
-    expect(sum([1, 1])).to.equal(2);
-  });
-  
-  it('sums string numbers', () => {
-    expect(sum(['1', '1'])).to.equal(2);
-  });
+    // test overloading
+    it('sums mutiple number', () => {
+        expect(sum([1, 1])).to.equal(2);
+    });
+
+    it('sums string numbers', () => {
+        expect(sum(['1', '1'])).to.equal(2);
+    });
 });

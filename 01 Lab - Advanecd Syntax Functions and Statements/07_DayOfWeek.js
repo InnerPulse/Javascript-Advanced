@@ -7,7 +7,7 @@ function getDay(d) {
         Friday: 5,
         Saturday: 6,
         Sunday: 7,
-    }
+    };
 
-    return days[d] || "error"
+    return days[d] || 'error';
 }

@@ -1,5 +1,5 @@
 function commandProcessor() {
-    let str = "";
+    let str = '';
 
     return {
         append: (concat) => (str = str.concat(concat)),

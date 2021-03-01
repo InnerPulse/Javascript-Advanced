@@ -1,55 +1,55 @@
 function posts() {
-  class Post {
-    constructor(title, content) {
-      this.title = title;
-      this.content = content;
+    class Post {
+        constructor(title, content) {
+            this.title = title;
+            this.content = content;
+        }
+
+        toString() {
+            return `Post: ${this.title}\nContent: ${this.content}`;
+        }
     }
 
-    toString() {
-      return `Post: ${this.title}\nContent: ${this.content}`;
-    }
-  }
+    class SocialMediaPost extends Post {
+        constructor(title, content, likes, dislikes) {
+            super(title, content);
+            this.likes = likes;
+            this.dislikes = dislikes;
+            this.comments = [];
+        }
 
-  class SocialMediaPost extends Post {
-    constructor(title, content, likes, dislikes) {
-      super(title, content);
-      this.likes = likes;
-      this.dislikes = dislikes;
-      this.comments = [];
-    }
+        addComment(comment) {
+            this.comments.push(comment);
+        }
 
-    addComment(comment) {
-      this.comments.push(comment);
-    }
+        toString() {
+            const result = super.toString();
+            const rating = `Rating: ${this.likes - this.dislikes}`;
+            const comments = this.comments.length
+                ? `Comments:\n${this.comments.map((c) => ` * ${c}`).join('\n')}`
+                : '';
 
-    toString() {
-      const result = super.toString();
-      const rating = `Rating: ${this.likes - this.dislikes}`;
-      const comments = this.comments.length
-        ? `Comments:\n${this.comments.map((c) => ` * ${c}`).join('\n')}`
-        : '';
-
-      return [result, rating, comments].join('\n').trim();
-    }
-  }
-
-  class BlogPost extends Post {
-    constructor(title, content, views) {
-      super(title, content);
-      this.views = views;
+            return [result, rating, comments].join('\n').trim();
+        }
     }
 
-    view() {
-      this.views++;
-      return this;
+    class BlogPost extends Post {
+        constructor(title, content, views) {
+            super(title, content);
+            this.views = views;
+        }
+
+        view() {
+            this.views++;
+            return this;
+        }
+
+        toString() {
+            return super.toString() + `\nViews: ${this.views}`;
+        }
     }
 
-    toString() {
-      return super.toString() + `\nViews: ${this.views}`;
-    }
-  }
-
-  return { Post, SocialMediaPost, BlogPost };
+    return { Post, SocialMediaPost, BlogPost };
 }
 
 posts();

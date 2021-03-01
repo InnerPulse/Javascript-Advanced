@@ -11,7 +11,7 @@ function breakfastRobot() {
     const actions = {
         restock: (microelement, quantity) => {
             storage[microelement] += quantity;
-            return "Success";
+            return 'Success';
         },
         prepare: (product, quantity) => {
             const ingredients = Object.keys(recipes[product]);
@@ -26,7 +26,7 @@ function breakfastRobot() {
                 storage[ing] -= recipes[product][ing] * quantity;
             });
 
-            return "Success";
+            return 'Success';
         },
         report: () => {
             return Object.keys(storage)
@@ -34,12 +34,12 @@ function breakfastRobot() {
                     a.push(`${c}=${storage[c]}`);
                     return a;
                 }, [])
-                .join(" ");
+                .join(' ');
         },
     };
 
     return function (cmds) {
-        let [command, product, quantity] = cmds.split(" ");
+        let [command, product, quantity] = cmds.split(' ');
         quantity = Number(quantity);
         return actions[command](product, quantity);
     };

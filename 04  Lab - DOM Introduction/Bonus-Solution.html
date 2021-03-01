@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>FromJSONToHTMLTable</title>
-    <style>
-      table,
-      th {
-        border: groove;
-        border-collapse: collapse;
-      }
-      td {
-        border: 1px solid black;
-      }
-      td,
-      th {
-        padding: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="wrapper"></div>
-    <script>
-      function fromJSONToHTMLTable(input) {
+    <head>
+        <meta charset="UTF-8" />
+        <title>FromJSONToHTMLTable</title>
+        <style>
+            table,
+            th {
+                border: groove;
+                border-collapse: collapse;
+            }
+            td {
+                border: 1px solid black;
+            }
+            td,
+            th {
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper"></div>
+        <script>
+            function fromJSONToHTMLTable(input) {
+                const parsed = JSON.parse(str);
+                const escapeChar = (w) =>
+                    `${w}`
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;');
+                const makeRow = (tag, data) =>
+                    `<tr>${data
+                        .map((x) => `<${tag}>${escapeChar(x)}</${tag}>`)
+                        .join('')}</tr>`;
 
-        const parsed = JSON.parse(str);
-        const escapeChar = (w) =>
-          `${w}`
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#39;");
-        const makeRow = (tag, data) =>
-          `<tr>${data
-            .map((x) => `<${tag}>${escapeChar(x)}</${tag}>`)
-            .join("")}</tr>`;
-
-        return `<table>
-${makeRow("th", Object.keys(parsed[0]))}
-${parsed.map((x) => makeRow("td", Object.values(x))).join("\n")}
+                return `<table>
+${makeRow('th', Object.keys(parsed[0]))}
+${parsed.map((x) => makeRow('td', Object.values(x))).join('\n')}
 </table>`;
-      }
+            }
 
-      window.onload = function () {
-        let container = document.getElementById("wrapper");
-        container.innerHTML = fromJSONToHTMLTable([
-          '[{"Name":"Pesho","Score":4," Grade":8},{"Name":"Gosho","Score":5," Grade":8},{"Name":"Angel","Score":5.50," Grade":10}]',
-        ]);
-      };
-    </script>
-  </body>
+            window.onload = function () {
+                let container = document.getElementById('wrapper');
+                container.innerHTML = fromJSONToHTMLTable([
+                    '[{"Name":"Pesho","Score":4," Grade":8},{"Name":"Gosho","Score":5," Grade":8},{"Name":"Angel","Score":5.50," Grade":10}]',
+                ]);
+            };
+        </script>
+    </body>
 </html>

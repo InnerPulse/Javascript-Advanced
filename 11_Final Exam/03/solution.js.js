@@ -16,7 +16,6 @@ const numberOperations = {
         }
     },
     sumArrays: function (array1, array2) {
-
         const longerArr = array1.length > array2.length ? array1 : array2;
         const rounds = array1.length < array2.length ? array1.length : array2.length;
 
@@ -28,8 +27,8 @@ const numberOperations = {
 
         resultArr.push(...longerArr.slice(rounds));
 
-        return resultArr
-    }
+        return resultArr;
+    },
 };
 
-module.exports = numberOperations
+module.exports = numberOperations;

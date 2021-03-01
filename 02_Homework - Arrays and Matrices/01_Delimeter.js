@@ -1,3 +1,3 @@
-function delimeter(arr, char) {
-  return arr.join(`${char}`);
+function delimiter(arr, char) {
+    return arr.join(`${char}`);
 }

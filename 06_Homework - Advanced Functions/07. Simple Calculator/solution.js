@@ -1,9 +1,9 @@
-const [sumButton, subtractButton] = document.querySelectorAll("button");
+const [sumButton, subtractButton] = document.querySelectorAll('button');
 
 const actions = simpleCalculator();
-actions.init("#num1", "#num2", "#result");
-sumButton.addEventListener("click", actions.add);
-subtractButton.addEventListener("click", actions.subtract);
+actions.init('#num1', '#num2', '#result');
+sumButton.addEventListener('click', actions.add);
+subtractButton.addEventListener('click', actions.subtract);
 
 function simpleCalculator() {
     let s1;
@@ -18,13 +18,13 @@ function simpleCalculator() {
         },
         add: () => {
             output.value = Number(s1.value) + Number(s2.value);
-            s1.value = "";
-            s2.value = "";
+            s1.value = '';
+            s2.value = '';
         },
         subtract: () => {
             output.value = Number(s1.value) - Number(s2.value);
-            s1.value = "";
-            s2.value = "";
+            s1.value = '';
+            s2.value = '';
         },
     };
 }

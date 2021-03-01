@@ -11,13 +11,15 @@ function listProcessor(input) {
                 list = list.filter((x) => x !== el);
             },
             print: () => {
-                console.log(list.join(","));
+                console.log(list.join(','));
             },
         };
     };
 
     const listHandler = listCreator();
-    input.map((x) => x.split(" ")).map(([cmd, text]) => listProcessor[cmd](text));
+    input
+        .map((x) => x.split(' '))
+        .map(([cmd, text]) => listProcessor[cmd](text));
 }
 
 // listProcessor(["add hello", "add again", "remove hello", "add again", "print"]);

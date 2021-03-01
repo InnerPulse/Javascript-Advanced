@@ -1,3 +1,5 @@
 function sortTwoCriteria(arr) {
-  return arr.sort((a, b) => a.length - b.length || a.localeCompare(b)).join("\n");
+    return arr
+        .sort((a, b) => a.length - b.length || a.localeCompare(b))
+        .join('\n');
 }

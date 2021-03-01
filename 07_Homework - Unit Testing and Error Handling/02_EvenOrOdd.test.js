@@ -12,28 +12,28 @@ const { expect } = require('chai');
 // in a row to ensure the function works correctly.
 
 describe('isOddOrEven function', () => {
-  it('returns undefind if type if not valid', () => {
-    expect(isOddOrEven(1)).to.undefined;
-  });
+    it('returns undefined if type if not valid', () => {
+        expect(isOddOrEven(1)).to.undefined;
+    });
 
-  it('returns undefind if type if not valid', () => {
-    expect(isOddOrEven(['1'])).to.undefined;
-  });
+    it('returns undefined if type if not valid', () => {
+        expect(isOddOrEven(['1'])).to.undefined;
+    });
 
-  it('odd with valid sting', () => {
-    expect(isOddOrEven('a')).to.equal('odd');
-  });
+    it('odd with valid sting', () => {
+        expect(isOddOrEven('a')).to.equal('odd');
+    });
 
-  it('even with valid sting', () => {
-    expect(isOddOrEven('aa')).to.equal('even');
-  });
+    it('even with valid sting', () => {
+        expect(isOddOrEven('aa')).to.equal('even');
+    });
 
-  // test overloading
-  it('odd with valid longер sting', () => {
-    expect(isOddOrEven('aaааа')).to.equal('odd');
-  });
-  
-  it('even with valid longер sting', () => {
-    expect(isOddOrEven('aaаааа')).to.equal('even');
-  });
+    // test overloading
+    it('odd with valid longer sting', () => {
+        expect(isOddOrEven('aaааа')).to.equal('odd');
+    });
+
+    it('even with valid longer sting', () => {
+        expect(isOddOrEven('aaаааа')).to.equal('even');
+    });
 });

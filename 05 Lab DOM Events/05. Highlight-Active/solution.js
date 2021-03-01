@@ -1,15 +1,15 @@
 function focus() {
-   document.querySelectorAll("input").forEach((i) => {
-      i.addEventListener("focus", onFocus);
-      // Without blur event, the focus event will be fired on all of the elements
-      i.addEventListener("blur", onBlur);
-   });
+    document.querySelectorAll('input').forEach((i) => {
+        i.addEventListener('focus', onFocus);
+        // Without blur event, the focus event will be fired on all of the elements
+        i.addEventListener('blur', onBlur);
+    });
 
-   function onFocus(ev) {
-      ev.target.parentNode.className = "focused";
-   }
+    function onFocus(ev) {
+        ev.target.parentNode.className = 'focused';
+    }
 
-   function onBlur(ev) {
-      ev.target.parentNode.className = "";
-   }
+    function onBlur(ev) {
+        ev.target.parentNode.className = '';
+    }
 }
