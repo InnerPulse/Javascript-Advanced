@@ -15,3 +15,23 @@
 - The difficulties in the different assignments is increasing with the first being easiest and the last being hardest or with other words in ascending order.
 - In a subfolder in every solution's folder, there is the problems description in which for each problem we have a sample input.
 - These are simple solutions done with the knowledge I have accumulate so far and of course they can go under further optimization.
+
+
+
+
+```diff
+
++ Environment Specifics
+
+# Please, be aware that every JS environment may behave differently when executing code. 
+# Certain things that work in the browser are not supported in Node.js, which is the environment used by Judge.
+
+-The following actions are NOT supported:
+-•	.forEach() with NodeList (returned by querySelector() and querySelectorAll())
+-•	.forEach() with HTMLCollection (returned by getElementsByClassName() and element.children)
+-•	Using the spread-operator (...) to convert a NodeList into an array
+
+# If you want to perform these operations, you may use Array.from() to first convert the collection into an array.
+
+
+```
