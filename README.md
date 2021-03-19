@@ -17,10 +17,7 @@
 - These are simple solutions done with the knowledge I have accumulate so far and of course they can go under further optimization.
 
 
-
-
 ```diff
-
 + Environment Specifics
 
 # Please, be aware that every JS environment may behave differently when executing code. 
@@ -31,7 +28,5 @@
 -•	.forEach() with HTMLCollection (returned by getElementsByClassName() and element.children)
 -•	Using the spread-operator (...) to convert a NodeList into an array
 
-# If you want to perform these operations, you may use Array.from() to first convert the collection into an array.
-
-
+# If we want to perform these operations, we may use Array.from() to first convert the collection into an array.
 ```
